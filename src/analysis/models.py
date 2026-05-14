@@ -16,6 +16,6 @@ class PCAModel:
         X_scaled = (X - np.mean(X, axis=0)) / (np.std(X, axis=0) + 1e-9)
         self.pca.fit(X_scaled)
         self.scores = self.pca.transform(X_scaled)
-        self.loadings = self.pca.components_.T
+        self.loadings = self.pca.components_
         self.variance_ratio = self.pca.explained_variance_ratio_
         return self
